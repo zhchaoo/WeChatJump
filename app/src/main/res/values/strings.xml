@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">WeChatJump</string>
+    <string name="info1">使用说明:\n1. 首先打开小程序中跳一跳游戏，点击“开始游戏”；
+        \n2. 打开/切换到本小工具，点击“开始”；
+        \n3. 切换本小工具到后台，使微信“跳一跳”处于前台；
+        \n4. 等待10秒，小工具开始自动游戏。
+        \n5. 如果跳跃距离过远或者过近，在小工具中设置合适的参数。
+        \n
+        </string>
+    <string name="info2">注意事项:\n1. 本工具需要手机root之后才能使用（自动点击屏幕）；
+        \n2. 本工具纯属研究学习之用，不包含任何广告或者危害手机的功能，请放心使用；
+        \n3. 部分手机可能不兼容。
+        \n
+        </string>
+    <string name="spinner">参数设置：
+        </string>
+    <string name="start">开始</string>
+    <string name="end">结束</string>
+    <string name="toggle">开启悬浮窗(部分机型支持)</string>
+    <string-array name="configset">
+        <item>default(1920*1080)</item>
+        <item>2560*1440</item>
+        <item>2160*1080</item>
+        <item>1440*720</item>
+        <item>1280*720</item>
+        <item>960*540</item>
+        <item>华为</item>
+        <item>小米</item>
+        <item>三星</item>
+        <item>锤子</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="confighuawei">
+        <item>honor note8</item>
+    </string-array>
+    <string-array name="configxiaomi">
+        <item>max2</item>
+        <item>mi5</item>
+        <item>mi5s</item>
+        <item>mi5x</item>
+        <item>mi6</item>
+        <item>note2</item>
+    </string-array>
+    <string-array name="configsamsung">
+        <item>s7edge</item>
+        <item>s8</item>
+    </string-array>
+    <string-array name="configsmartisan">
+        <item>pro2</item>
+    </string-array>
+    <string name="defaultconfig" />
+</resources>

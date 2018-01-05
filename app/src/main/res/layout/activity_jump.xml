@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chaos.wechatjump.JumpActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp">
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/info1"
+            tools:layout_editor_absoluteX="102dp"
+            tools:layout_editor_absoluteY="79dp"
+            tools:text="@string/info1" />
+
+        <TextView
+            android:id="@+id/info2_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/info2" />
+
+        <TextView
+            android:id="@+id/spinner_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spinner" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="match_parent"
+            android:entries="@array/configset" />
+
+        <Spinner
+            android:id="@+id/spinner_ext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="match_parent"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="按压系数（1~3）"
+            android:inputType="numberDecimal"
+            android:text="1.392"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/info3_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Red"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/check_float"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:checked="true"
+            android:text="@string/toggle" />
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/start"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="383dp" />
+
+        <Button
+            android:id="@+id/end_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/end"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="383dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
