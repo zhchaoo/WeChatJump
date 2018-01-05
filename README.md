@@ -9,7 +9,8 @@
 
 
 ## 使用教程
-[知乎](https://zhuanlan.zhihu.com/p/32571293?group_id=932387133285470208)
+![](https://github.com/zhchaoo/WeChatJump/blob/master/usage1.jpg)
+![](https://github.com/zhchaoo/WeChatJump/blob/master/usage2.jpg)
 
 
 ## Release版下载链接
