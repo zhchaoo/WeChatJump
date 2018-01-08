@@ -113,9 +113,9 @@ public class JumpService extends Service {
                         + ") end(" + points.end().x + "," + points.end().y + ") jump(" + mJumpCount + ")");
                 if (mJumpCount++ == mNextRest) {
                     long restTime = (long) (Math.random() * 10000);
-                    SystemClock.sleep(restTime);
-                    mNextRest = (int) (Math.random() * 20);
                     mObserver.setDisplayInfo("跳了" + mJumpCount + "次，休息" + Math.round(restTime) + "秒");
+                    SystemClock.sleep(restTime);
+                    mNextRest += (int) (Math.random() * 20 + 1);
                     Log.d(mLogTag, "rest " + restTime + "ms, next rest " + mNextRest + "jumps");
                 }
             }
