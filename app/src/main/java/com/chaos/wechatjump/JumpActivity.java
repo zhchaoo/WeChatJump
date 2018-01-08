@@ -23,6 +23,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
 import static android.R.attr.id;
 
 public class JumpActivity extends AppCompatActivity {
@@ -159,9 +161,9 @@ public class JumpActivity extends AppCompatActivity {
 
         RootShellCmd cmd = new RootShellCmd();
         TextView info3 = (TextView) findViewById(R.id.info3_text);
+        String testPath = "/sdcard/autojump.png";
         // check screenshot
         try {
-            String testPath = "/sdcard/autojump.png";
             cmd.screenCapture(testPath);
             SystemClock.sleep(1500);
 
@@ -190,5 +192,11 @@ public class JumpActivity extends AppCompatActivity {
             info3.setVisibility(View.VISIBLE);
             startBtn.setEnabled(false);
         }
+        // delete file
+        File file = new File(testPath);
+        if(file.isFile()){
+            file.delete();
+        }
+        file.exists();
     }
 }

@@ -61,6 +61,8 @@ public class JumpService extends Service {
     private class JumpRunnable implements Runnable {
         private boolean mPause = false;
         private boolean mStop = false;
+        private int mNextRest;
+        private int mJumpCount = 0;
         private JumpObserver mObserver;
 
         void addObserver(JumpObserver observer) {
@@ -80,6 +82,7 @@ public class JumpService extends Service {
         @Override
         public void run() {
             SystemClock.sleep(8000);
+            mNextRest = (int) (Math.random() * 20);
             while (!mStop) {
                 mCmd.screenCapture(mPicturePath);
                 SystemClock.sleep(2000);
@@ -107,7 +110,14 @@ public class JumpService extends Service {
                 // wait for next jump
                 SystemClock.sleep(2000 + Math.max(pressTime, 400) + (int) (Math.random() * 200));
                 Log.d(mLogTag, "point dist:" + distance + " press:" + pressTime + " start:(" + points.start().x + "," + points.start().y
-                        + ") end(" + points.end().x + "," + points.end().y + ")");
+                        + ") end(" + points.end().x + "," + points.end().y + ") jump(" + mJumpCount + ")");
+                if (mJumpCount++ == mNextRest) {
+                    long restTime = (long) (Math.random() * 10000);
+                    SystemClock.sleep(restTime);
+                    mNextRest = (int) (Math.random() * 20);
+                    mObserver.setDisplayInfo("跳了" + mJumpCount + "次，休息" + Math.round(restTime) + "秒");
+                    Log.d(mLogTag, "rest " + restTime + "ms, next rest " + mNextRest + "jumps");
+                }
             }
         }
     };
@@ -121,7 +131,9 @@ public class JumpService extends Service {
         int top = (int) (1584 * (height / 1920.0));
         left = (int) (left - 50 + Math.random() * 100);
         top = (int) (top - 50 + Math.random() * 100);
-        mSwipePos = new PointSet(new PointF(left, top), new PointF(left, top + 100));
+        int left2 = (int) (left - 3 + Math.random() * 3);
+        int top2 = (int) (left -3 + Math.random() * 3);
+        mSwipePos = new PointSet(new PointF(left, top), new PointF(left2, top2));
     }
 
     private int jump(double distance) {
